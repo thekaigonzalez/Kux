@@ -1,0 +1,7 @@
+/symlib.so/
+/bin/
+/luarocks
+/lua
+/lua_modules
+/.luarocks
+/usr/bin/libhttp.so/
