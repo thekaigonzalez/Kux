@@ -43,7 +43,7 @@ function mgr:bmain() --- Boot entry point.
         local command = io.read()
         process.gAddArguments(command)
         -- hopefully don't fucking die when you get commands wrong :)
-        if file_exists("./usr/dsh/" + process.argv[0] .. ".lua") then
+        if file_exists("./usr/dsh/" .. process.argv[0] .. ".lua") then
             local object = require ('usr.dsh.' .. process.argv[0])
             object:Main(process.argv)
         else
