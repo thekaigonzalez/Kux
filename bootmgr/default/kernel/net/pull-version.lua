@@ -8,7 +8,7 @@ require "lib.osdev.shared"
 --- I need the hgetstring(website) function.
 require "libhttp"
 
-process.version = "1.4.2"
+process.version = "1.4.3"
 
 
 function isuptodate()
