@@ -21,7 +21,7 @@ end
 function isuptodate()
     local str = ""
     local i = 0
-    for l in io.open("bootmgr/default/version/VERSION.manifest"):lines() do
+    for l in io.open("usr/dversion/VERSION.manifest"):lines() do
         if i == 0 then
             str = str .. l
         end
