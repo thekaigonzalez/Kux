@@ -1,7 +1,8 @@
-1.4.4
+1.4.5
 
 - Fixes errors
 - Adds a new library (or two ;))
 - Removes the initial print functions
 - Updates README.md
 - Fix a bunch of Version errors
+- Fixes the newline issue
