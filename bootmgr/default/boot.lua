@@ -12,12 +12,12 @@ require('libmemio')
 
 --- REQUIRED FUNCTION!
 --- is needed to uninstall the manager entirely.
-function mgr.uninstall()
+function mgr:uninstall()
 
 end
 
 
-function mgr.bmain() --- Boot entry point.
+function mgr:bmain() --- Boot entry point.
     DIRECTORY = "usr/"
     print("welcome to Kux default edition!")
     print("Type HELP for a list of commands.")

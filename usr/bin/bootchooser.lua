@@ -52,8 +52,8 @@ end
 if file_exists("usr/bootloader/is.txt") then
     LOG("Loading Kux...")
 
-    fsn = require("usr.bootloader.bootmanager.boot")
-    fsn.bmain()
+    fsn = require("usr.bootloader.bootmanager.boot") -- interesting...
+    fsn:bmain()
 else
     Assert(not file_exists("./usr/bootloader/is.txt")) -- Check if there isn't an existing boot installation (Again)
     --- lil' q&a
