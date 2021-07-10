@@ -3,6 +3,13 @@
 
 local mgr = {}
 
+
+--- osdev stuff
+require('lib.osdev.shared')
+
+--- Low level KuxAPI memory functions
+require('libmemio')
+
 --- REQUIRED FUNCTION!
 --- is needed to uninstall the manager entirely.
 function mgr.uninstall()
@@ -21,7 +28,10 @@ function mgr.bmain() --- Boot entry point.
     while (true) do
         io.write(DIRECTORY .. " % ")
         local command = io.read()
-        command = require ('usr.dsh.' + command)
+        process.gAddArguments(command)
+
+        local object = require ('usr.dsh.' .. process.argv[0])
+        object:Main(process.argv)
 
     end
 

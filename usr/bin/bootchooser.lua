@@ -20,6 +20,16 @@ require('libfs')
 --- sys_register(registryName, registryData)
 require('libsyscalls')
 
+--- LibMemoryIO Allows for Unsafe memory calls within Lua using the Kux C API.
+--- LibMemoryIO should only be used for allocating space and deallocating space.
+--- AllocateMemory(memory: int) - Allocates memory
+--- MemPrint(str: str) - Prints an allocated string.
+--- AllowUniversalLua() - Allows for Unsafe / Universal raw C API calls. CALL THIS BEFORE MemPrint, AllocateMemory, Or Assert
+--- Assert(expr) - assert() from C/C++.
+require('libmemio')
+
+
+AllowUniversalLua() -- Allows raw C Calls to be passed through the system
 
 function file_exists(name)
     local f=io.open(name,"r")
@@ -34,7 +44,8 @@ end
 
 
 function LOG(str)
-    print(filename() .. ": " .. str)
+    --- allocate at least 500 chars, shouldn't need much more... right?
+    MemPrint(500, filename() .. ": " .. str .. "\n")
 end
 
 
@@ -44,6 +55,7 @@ if file_exists("usr/bootloader/is.txt") then
     fsn = require("usr.bootloader.bootmanager.boot")
     fsn.bmain()
 else
+    Assert(not file_exists("./usr/bootloader/is.txt")) -- Check if there isn't an existing boot installation (Again)
     --- lil' q&a
     LOG("Which boot manager would you like to install?")
     io.write("setup/~$ ")
@@ -74,7 +86,8 @@ else
                 sysfcpy("./bootmgr/default", "usr/bootloader/bootmanager")
                 thread_sleep(3)
                 LOG("Files copied! adding installs to registry...")
-                sys_register("is", "default") --- register into bootloader registry
+                sys_register("is", "default") -- register into bootloader registry
+                sys_register("name", "Anonymous") -- register name
                 thread_sleep(4)
                 sys_mkdir("usr/dsh/") --- make command directory
             else
