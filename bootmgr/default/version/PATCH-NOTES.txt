@@ -4,3 +4,4 @@
 - Adds a new library (or two ;))
 - Removes the initial print functions
 - Updates README.md
+- Fix a bunch of Version errors
