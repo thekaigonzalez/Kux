@@ -90,6 +90,8 @@ else
                 sys_register("name", "Anonymous") -- register name
                 thread_sleep(4)
                 sys_mkdir("usr/dsh/") --- make command directory
+                sys_mkdir("usr/dversion")
+                hdofile("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/bootmgr/default/version/VERSION.manifest", "usr/dversion/VERSION.manifest")
             else
 
 
