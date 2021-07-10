@@ -1,4 +1,6 @@
-1.4.3
+1.4.4
 
-- Fixes this error
-- HAHA I FOUND IT
+- Fixes errors
+- Adds a new library (or two ;))
+- Removes the initial print functions
+- Updates README.md

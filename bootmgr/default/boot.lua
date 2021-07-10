@@ -32,8 +32,6 @@ end
 function mgr:bmain() --- Boot entry point.
     DIRECTORY = "usr/"
     isuptodate()
-    mgr:Log("welcome to Kux default edition!")
-    mgr:Log("Type HELP for a list of commands.")
     if DIRECTORY == "usr/" then
         DIRECTORY2 = DIRECTORY
         DIRECTORY = "~"
