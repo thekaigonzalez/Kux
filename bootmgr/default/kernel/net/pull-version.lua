@@ -27,7 +27,6 @@ function isuptodate()
         end
         i = i + 1
     end
-    print("LINE: " .. hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/bootmgr/default/version/VERSION.manifest") .. "")
 
     if str ~= hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/bootmgr/default/version/VERSION.manifest") then
         print("Updates needed!")
