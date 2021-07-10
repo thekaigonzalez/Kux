@@ -1,0 +1,5 @@
+1.4.2
+
+- Fixes a couple of minor bugs
+- Organizes Lua Code
+- Tests a new internet algorithm for versions
