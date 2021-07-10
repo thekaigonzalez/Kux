@@ -1,6 +1,7 @@
 require "libposix"
 require "libhttp"
 require "libsyscalls"
+require "bootmgr.default.kernel.net.pull-version"
 local self = {}
 
 function self:Main(a)
@@ -12,7 +13,9 @@ function self:Main(a)
         os.remove('bootmgr/default/version/VERSION.manifest')
         hdofile("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/bootmgr/default/version/VERSION.manifest", "bootmgr/default/version/VERSION.manifest")
         dofile("usr/bootloader/bootmanager/boot.lua")
+        process.version = hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/bootmgr/default/version/VERSION.manifest")
     end
 end
+
 
 return self
