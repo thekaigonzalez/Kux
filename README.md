@@ -38,3 +38,7 @@ KTerminal
 ### Performance Comparison
 
 Kux is approximately a SECOND faster than KTerminal.
+
+## The Filesystem
+The Filesystem rule is (Unix x86 Format).
+
