@@ -13,7 +13,7 @@ process.argv = {}
 function process.gAddArguments(string)
     local lns = split(string, " ")
     i = 0
-    -- doesn't work..
+    -- works!
     for _,V in ipairs(lns) do
         process.argv[i] = V;
         i = i + 1
