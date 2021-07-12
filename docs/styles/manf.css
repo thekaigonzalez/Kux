@@ -2,7 +2,25 @@ h3 {
     color: #A00000;font-family:'helvetica', sans-serif;
     padding-top: 15%;
 }
+html, body {
+    background-color: #fcfcfc;
+    font-family: sans-serif;
+    font-size: 100%;
+    color: #181818;
+}
 
+body {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+h1, h2, h3, h4, h5, h5 {
+    font-family: helvetica, sans-serif;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 25px;
+}
 pre{
     padding: 1px;
     font-size: 15px;
