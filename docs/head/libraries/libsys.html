@@ -1,0 +1,72 @@
+<html lang="en-US">
+<link rel="stylesheet" href="../../styles/man.css">
+
+<h3><strong>LIBSYS - Contains filesystem calls using STD APIs and system calls.</strong></h3>
+
+<pre>
+    LIBSYS contains a bunch of functions for managing system calls and directories using Kux APIs.
+</pre>
+
+<h3><strong>INIT SYNOPSIS</strong></h3>
+
+<pre>
+    int luaopen_libsyscalls(lua_State* L);
+</pre>
+
+<h3><strong>FUNCTION SYNOPSIS</strong></h3>
+
+<pre>
+    int clearsys_posix(lua_State* L);
+
+    int clearsys_winapi(lua_State* L);
+
+    int ls_return(lua_State* L);
+
+    int mkdir_sys(lua_State* L);
+
+    int invoke_command(lua_State *L);
+
+    int copy_files(lua_State* L);
+
+    int sys_writeregistry(lua_State* L);
+</pre>
+
+<h3><strong>REGISTRY</strong></h3>
+
+<pre>
+    clear_posix() - Clears the screen using POSIX APIs
+
+    clear_windows() - Clears the screen using Windows APIs
+
+    sys_listdir(string directory) - Lists a directory using STD APIs
+
+    sys_mkdir(string directory) - Creates a directory using STD APIs
+
+    invoke_cmd(string command) - Invokes a command using STD APIs
+
+    sysfcpy(string __fdir1, string __tdir2) - Copies FILES OR DIRECTORIES to another using STD APIs.
+
+    sys_register(string vname, string vval) - Registers a variable into usr/bootloader using STD APIs.
+</pre>
+
+<h3><strong>DESCRIPTION</strong></h3>
+
+<pre>
+    LIBSYSCALLS contains system calls that function in bootloaders and <a href="../../../usr/bin/bootchooser.lua">bootchooser.lua</a>
+</pre>
+
+<h3><strong>COPYRIGHT</strong></h3>
+
+<pre>
+    This File is licensed under the Kux Project's license, The GNU AFFERO GENERAL PUBLIC LICENSE.
+    https://fsf.org/
+</pre>
+
+<hr>
+
+<h3><strong>PAGES REFERENCING LIBSYS(1P)</strong></h3>
+
+<pre>
+    <a href="libfs.html">libfs(0)</a>
+</pre>
+</html>

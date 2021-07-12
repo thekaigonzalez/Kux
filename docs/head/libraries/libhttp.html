@@ -1,0 +1,38 @@
+<html lang="en-US">
+<link rel="stylesheet" href="../../styles/man.css">
+
+<h3><strong>LIBHTTP - Contains HTTP TCP Requests using C++ libraries.</strong></h3>
+
+<pre>
+    LIBHTTP contains HTTP TCP Requests which use LibCURL and a wrapper for libCURL called CPR
+</pre>
+
+<h3><strong>INIT SYNOPSIS</strong></h3>
+
+<pre>
+    int luaopen_libhttp(lua_State *L);
+</pre>
+
+<h3><strong>FUNCTION SYNOPSIS</strong></h3>
+
+<pre>
+    int gRString(lua_State* L);
+
+    int gDownload(lua_State* L);
+</pre>
+
+<h3><strong>REGISTRY</strong></h3>
+
+<pre>
+    hgetstring(string website) - Returns a string with the given GET request return value text.
+    hdofile(string website, string file) - Creates a file with the given GET request return value text. Doesn't return anything.
+</pre>
+
+
+<h3><strong>COPYRIGHT</strong></h3>
+
+<pre>
+    This File is licensed under the Kux Project's license, The GNU AFFERO GENERAL PUBLIC LICENSE.
+    https://fsf.org/
+</pre>
+</html>

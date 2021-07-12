@@ -1,0 +1,11 @@
+h3 {
+    color: darkred;font-family:'helvetica', sans-serif;
+    padding: 15px;
+}
+
+pre{
+    padding: 1px;
+    font-size: 15px;
+}
+
+h2{ font-family: 'PT Mono', serif;font-size: 15px;text-align: center;}

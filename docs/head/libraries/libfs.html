@@ -1,0 +1,58 @@
+<html lang="en-US">
+<link rel="stylesheet" href="../../styles/man.css">
+
+<h3><strong>LIBFS - Library tailored for gathering POSIX directories</strong></h3>
+
+<pre>
+    Libfs is tailored for one thing and one thing only, Directories.
+    Containing one function, getworkingdir_posix(), it gets the working directory and returns it.
+</pre>
+
+<h3><strong>INIT SYNOPSIS</strong></h3>
+
+<pre>
+    int luaopen_libfs(lua_State* L);
+</pre>
+
+<h3><strong>FUNCTION SYNOPSIS</strong></h3>
+
+<pre>
+    int cwdfs(lua_State* L);
+</pre>
+
+<h3><strong>SEE ALSO</strong></h3>
+
+<pre>
+    <a href="libsys.html">LIBSYS</a>
+</pre>
+
+<h3><strong>EXAMPLE</strong></h3>
+
+<pre>
+    -- Include the main file
+    require('libfs')
+    local dir = getworkingdir_posix()
+
+    print(dir) -- /Users/Kai/Tests/
+</pre>
+
+<h3><strong>REGISTRY</strong></h3>
+
+<pre>
+    getworkingdir_posix() - Gets the current working directory
+</pre>
+
+<h3><strong>BUGS</strong></h3>
+
+<pre>
+    Does not return <strong>FULL FILE PATH</strong>, getworkingdir_posix() only returns the directory in which the environment is running.
+</pre>
+
+<h3><strong>COPYRIGHT</strong></h3>
+
+<pre>
+    This File is licensed under the Kux Project's license, The GNU AFFERO GENERAL PUBLIC LICENSE.
+    https://fsf.org/
+</pre>
+
+</html>

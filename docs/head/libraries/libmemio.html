@@ -1,0 +1,71 @@
+<html lang="en-US">
+<link rel="stylesheet" href="../../styles/man.css">
+<h3><strong>LIBMEMIO - Library for interacting with low level memory access functions</strong></h3>
+
+<pre>
+    LIBMEMIO Allows functions to be passed in Lua and allows memory editing in a time.
+</pre>
+
+<h3><strong>FUNCTIONS</strong></h3>
+
+<pre>
+    Functions are:
+
+    AllocateMemory(mem) [1]
+    Assert(expr) [2]
+    AllowUniversalLua() [3]
+    MemPrint(memset, str) [4]
+
+</pre>
+<!--<link rel="stylesheet" href="../../styles/man.css">-->
+<h3><strong>INIT SYNOPSIS</strong></h3>
+
+<pre>
+    int luaopen_libmemio(lua_State* L);
+</pre>
+
+<h3><strong>FUNCTION SYNOPSIS</strong></h3>
+
+<pre>
+    int alloclua(lua_State *L);
+
+    int assertflua(lua_State *L);
+
+    int allowUluafile(lua_State* L);
+
+    int fastprint(lua_State *L);
+</pre>
+
+<h3><strong>WARNING</strong></h3>
+
+<pre>
+
+    This library is only for Quality of Life and is special
+    to the Kux framework. When using LIBMEMIO in production,
+    You may encounter certain bugs such as MAVs, NULL Terminations,
+    And Slower applications. Please refer to EXAMPLES(1) for proper use of functionalities.
+
+</pre>
+
+<h3><strong>EXAMPLE</strong></h3>
+
+<pre>
+    --- Low level KuxAPI memory functions
+    require('libmemio')
+
+    AllowUniversalLua() -- Allows Unsafe Memory handling to be passed through our Lua Program
+
+    AllocateMemory(1) -- Allocates "1" byte of memory
+
+    MemPrint(10, "Hello World!") -- Allocates "10" bytes of memory for the string and frees it afterwards.
+
+    Assert(LuaExpression expr) -- Asserts the expression just like the C Function. Please refer to https://man7.org/linux/man-pages/man3/assert.3.html for the Official C Documentation of assert().
+</pre>
+
+<h3><strong>COPYRIGHT</strong></h3>
+
+<pre>
+    This File is licensed under the Kux Project's license, The GNU AFFERO GENERAL PUBLIC LICENSE.
+    https://fsf.org/
+</pre>
+</html>
