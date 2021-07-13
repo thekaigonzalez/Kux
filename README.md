@@ -12,6 +12,7 @@ Containing its own:
 - Posix library
 - Portable System Calls library
 - Simple Loader
+- Linux man-page style documentation (https://thekaigonzalez.github.io/Kux/head/)
 
 Kux is completely from scratch. No external libraries except for maybe luarocks are used.
 
