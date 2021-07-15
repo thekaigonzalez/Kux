@@ -1,10 +1,7 @@
-1.4.7
+1.4.8
 
-- Adds a couple of *secrets*
+- Adds a logo to the initscreen
 
 To install, type:
 
 pull +stable
-
-kap pull-apt ppa:outdated kap
-kap pull-apt ppa:outdated clear
