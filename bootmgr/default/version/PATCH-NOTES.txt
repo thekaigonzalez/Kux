@@ -1,7 +1,8 @@
-1.5.1
+1.5.2
 
 - Fix Man Pages and fix the argument array (now it doesn't pass arguments to over programs
 - Add a couple new commands
+- Fix a bug lol
 
 To install, type:
 
