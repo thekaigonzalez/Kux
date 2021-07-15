@@ -8,7 +8,6 @@ function self:Main(apg)
             print("missing package")
         else
             print("installing...")
-            thread_sleep(1)
             -- check if the file exists on server
             if hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. apg[2] .. ".lua") == "404: Not Found" then
                 print("Module not found! Returned 404 when i tried contacting servers.")

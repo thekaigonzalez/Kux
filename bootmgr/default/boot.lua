@@ -69,7 +69,7 @@ G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
             object:Main(process.argv)
         else
             if hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. process.argv[0] .. ".lua") ~= "404: Not Found" then
-                print("command not found. But can be installed with")
+                print("command not found. But can be installed with dpkg install " )
             end
         end
 
