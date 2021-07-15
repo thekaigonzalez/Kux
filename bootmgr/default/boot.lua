@@ -32,16 +32,35 @@ end
 
 function mgr:bmain() --- Boot entry point.
     DIRECTORY = "usr/"
+    print([[
+    Welcome to ...
+        GGGGGGGGGGGGGKKKKKKKKK    KKKKKKK
+     GGG::::::::::::GK:::::::K    K:::::K
+   GG:::::::::::::::GK:::::::K    K:::::K
+  G:::::GGGGGGGG::::GK:::::::K   K::::::K
+ G:::::G       GGGGGGKK::::::K  K:::::KKKuuuuuu    uuuuuu  xxxxxxx      xxxxxxx
+G:::::G                K:::::K K:::::K   u::::u    u::::u   x:::::x    x:::::x
+G:::::G                K::::::K:::::K    u::::u    u::::u    x:::::x  x:::::x
+G:::::G    GGGGGGGGGG  K:::::::::::K     u::::u    u::::u     x:::::xx:::::x
+G:::::G    G::::::::G  K:::::::::::K     u::::u    u::::u      x::::::::::x
+G:::::G    GGGGG::::G  K::::::K:::::K    u::::u    u::::u       x::::::::x
+G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
+ G:::::G       G::::GKK::::::K  K:::::KKKu:::::uuuu:::::u      x::::::::::x
+  G:::::GGGGGGGG::::GK:::::::K   K::::::Ku:::::::::::::::uu   x:::::xx:::::x
+   GG:::::::::::::::GK:::::::K    K:::::K u:::::::::::::::u  x:::::x  x:::::x
+     GGG::::::GGG:::GK:::::::K    K:::::K  uu::::::::uu:::u x:::::x    x:::::x
+        GGGGGG   GGGGKKKKKKKKK    KKKKKKK    uuuuuuuu  uuuuxxxxxxx      xxxxxxx
+    ]])
     isuptodate()
     if DIRECTORY == "usr/" then
         DIRECTORY2 = DIRECTORY
         DIRECTORY = "~"
     end
     while (true) do
-        io.write(DIRECTORY .. " % ")
+        io.write(io.open("usr/bootloader/name.txt"):lines()[0] .. ":" .. DIRECTORY .. " % ")
         local command = io.read()
         process.gAddArguments(command)
-        -- hopefully don't fucking die when you get commands wrong :)
+
         if file_exists("./usr/dsh/" .. process.argv[0] .. ".lua") then
             local object = require ('usr.dsh.' .. process.argv[0])
             object:Main(process.argv)
