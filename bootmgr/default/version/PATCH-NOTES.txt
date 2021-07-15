@@ -1,3 +1,10 @@
-1.4.6
+1.4.7
 
-- Adds a new command line tool for getting version command changes using ppa:outdated
+- Adds a couple of *secrets*
+
+To install, type:
+
+pull +stable
+
+kap pull-apt ppa:outdated kap
+kap pull-apt ppa:outdated clear
