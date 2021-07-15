@@ -41,9 +41,18 @@ function self:Main(ar)
                         print("manual entry download '" .. ar[2] .. "' not found in server.")
                     end
                 end
+            elseif ar[1] == "-k" then
+                if file_exists("usr/share/man-doc/" .. ar[2] .. ".lua") then
+                    local manpage = require('usr.share.man-doc.' .. ar[2])
+                    print(ar[2] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[2] .. "(" .. manpage.Position .. ") ")
+                    print("\nNAME\n\t" .. manpage:Name() .. "\nDESCRIPTION\n\t" .. manpage:Description() .. "\nSYNOPSIS\n\t" .. manpage:Synopsis() .. "\nCOPYRIGHT\n\tThis document is licensed under the " .. manpage:Copyright())
+                else
+                    print("no manual entry found for '" .. ar[2] .. "'")
+                end
             end
 
-            else
+
+        else
                 if file_exists("usr/share/man-doc/" .. ar[1] .. ".lua") then
                     local manpage = require('usr.share.man-doc.' .. ar[1])
                     print(ar[1] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[1] .. "(" .. manpage.Position .. ") ")
