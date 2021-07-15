@@ -50,8 +50,6 @@ end
 
 
 if file_exists("usr/bootloader/is.txt") then
-    LOG("Loading Kux...")
-
     fsn = require("usr.bootloader.bootmanager.boot") -- interesting...
     fsn:bmain()
 else
