@@ -57,7 +57,7 @@ G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
         DIRECTORY = "~"
     end
     while (true) do
-        io.write(io.open("usr/bootloader/name.txt"):lines()[0] .. ":" .. DIRECTORY .. " % ")
+        io.write(io.open("usr/bootloader/name.txt"):lines(1) .. ":" .. DIRECTORY .. " % ")
         local command = io.read()
         process.gAddArguments(command)
 
