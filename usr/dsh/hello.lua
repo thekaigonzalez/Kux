@@ -9,7 +9,13 @@ function self:Main(a)
         print("Prints hello world.\nYou could use traditional [Hello World] (-tr)\nOneWord (-ow) [Hello]\nOr, Simply use `hello`.")
     elseif a[1] == "-tr" then
         self.Message = "Hello World"
+    elseif a[1] == "-ow" then
+        print("Hello")
+    elseif a[1] == "hello" then
+        print("Don't you tell me hello, I'm telling you hello!")
     end
+
+
     print(self.Message)
 end
 

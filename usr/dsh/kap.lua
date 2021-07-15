@@ -26,8 +26,9 @@ function self:Main(aa)
                 end
             end
         end
+    elseif aa[1] == "boop" then
+        print("That is not a secret in the program.")
     end
-
 end
 
 return self
