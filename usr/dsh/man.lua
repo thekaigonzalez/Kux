@@ -42,7 +42,7 @@ function self:Main(ar)
                     end
                 end
             elseif ar[1] == "-k" then
-                if ar[2] == nil or #ar < 3 then
+                if ar[2] == nil or #ar < 2 then
                     print("no entry found for ''")
                 else
                     if file_exists("usr/share/man-doc/" .. ar[2] .. ".lua") then
