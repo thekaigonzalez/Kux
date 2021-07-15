@@ -1,8 +1,8 @@
-1.5.3
+1.5.4
 
 - Fix Man Pages and fix the argument array (now it doesn't pass arguments to over programs
 - Add a couple new commands
-- Actually fix it now lol
+- Ok.. For real this time
 To install, type:
 
 pull +stable
