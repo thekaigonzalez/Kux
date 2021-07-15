@@ -25,7 +25,6 @@ function file_exists(name)
     if f~=nil then io.close(f) return true else return false end
 end
 function self:Main(ar)
-    ar = {}
     if isdir("usr/share/man-doc") then
         if ar[1] == nil then
             print("what are you looking for?\ntry `man man`")

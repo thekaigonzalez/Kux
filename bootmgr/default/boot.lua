@@ -62,8 +62,8 @@ G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
     while (true) do
         io.write(":" .. DIRECTORY .. "$ ")
         local command = io.read()
-
-        if file_exists("./usr/dsh/" ..process.argv[0] .. ".lua") then
+        process.gAddArguments(command)
+        if file_exists("./usr/dsh/" .. process.argv[0] .. ".lua") then
             local object = require ('usr.dsh.' .. argv[0])
 
             object:Main(process.argv)

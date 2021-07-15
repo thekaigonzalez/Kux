@@ -7,7 +7,9 @@ self.styles = true
 --- Generates a HTML File with the man-page contents
 
 function self:Main(arguments)
-    if arguments[1] == "-s" then
+    if arguments[1] == nil or arguments[1] == "-h" then
+        print("GMan Is a utility for generating HTML documents\nCommands:\n\tgman <doc>")
+    elseif arguments[1] == "-s" then
         self.styles = true
     else
         if file_exists("usr/share/man-doc/" .. arguments[1] .. ".lua") then
