@@ -1,8 +1,3 @@
-1.4.5
+1.4.6
 
-- Fixes errors
-- Adds a new library (or two ;))
-- Removes the initial print functions
-- Updates README.md
-- Fix a bunch of Version errors
-- Fixes the newline issue
+- Adds a new command line tool for getting version command changes using ppa:outdated
