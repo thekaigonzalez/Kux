@@ -46,7 +46,7 @@ function self:Main(ar)
                     print("no entry found for ''")
                 else
                     if file_exists("usr/share/man-doc/" .. ar[3] .. ".lua") then
-                        local manpage = require('usr.share.man-doc.' .. ar[2])
+                        local manpage = require('usr.share.man-doc.' .. ar[3])
                         print(ar[2] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[2] .. "(" .. manpage.Position .. ") ")
                         print("\nNAME\n\t" .. manpage:Name() .. "\nDESCRIPTION\n\t" .. manpage:Description() .. "\nSYNOPSIS\n\t" .. manpage:Synopsis() .. "\nCOPYRIGHT\n\tThis document is licensed under the " .. manpage:Copyright())
                     else
