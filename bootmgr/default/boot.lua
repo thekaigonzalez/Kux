@@ -62,17 +62,17 @@ G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
     while (true) do
         io.write(":" .. DIRECTORY .. "$ ")
         local command = io.read()
-        local argv = OneTimeSplit(command)
-        if file_exists("./usr/dsh/" .. argv[0] .. ".lua") then
+
+        if file_exists("./usr/dsh/" ..process.argv[0] .. ".lua") then
             local object = require ('usr.dsh.' .. argv[0])
 
-            object:Main(argv)
+            object:Main(process.argv)
             process.argv = {}
         else
             if hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. argv[0] .. ".lua") ~= "404: Not Found" then
-                print("command not found. But can be installed with dpkg install " .. argv[0] )
+                print("command not found. But can be installed with dpkg install " .. process.argv[0] )
             else
-                print(argv[0] .. ": command not found")
+                print(process.argv[0] .. ": command not found")
             end
         end
     end
