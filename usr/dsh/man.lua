@@ -26,8 +26,9 @@ function file_exists(name)
 end
 function self:Main(ar)
     if isdir("usr/share/man-doc") then
-
+        if ar[1] == nil then
             print("what are you looking for?\ntry `man man`")
+        else
             if ar[1] == "-h" then
                 print("MAN Page Language for Kux\nCommands:\n\tman <doc>\n\tman -k <doc>\n\tman -e <doc>")
             elseif ar[1] == "-i" then
@@ -41,18 +42,24 @@ function self:Main(ar)
                     end
                 end
             elseif ar[1] == "-k" then
-                if file_exists("usr/share/man-doc/" .. ar[2] .. ".lua") then
-                    local manpage = require('usr.share.man-doc.' .. ar[2])
-                    print(ar[2] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[2] .. "(" .. manpage.Position .. ") ")
-                    print("\nNAME\n\t" .. manpage:Name() .. "\nDESCRIPTION\n\t" .. manpage:Description() .. "\nSYNOPSIS\n\t" .. manpage:Synopsis() .. "\nCOPYRIGHT\n\tThis document is licensed under the " .. manpage:Copyright())
+                if ar[2] == nil then
+                    print("no entry found for ''")
                 else
-                    print("no manual entry found for '" .. ar[2] .. "'")
+                    if file_exists("usr/share/man-doc/" .. ar[2] .. ".lua") then
+                        local manpage = require('usr.share.man-doc.' .. ar[2])
+                        print(ar[2] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[2] .. "(" .. manpage.Position .. ") ")
+                        print("\nNAME\n\t" .. manpage:Name() .. "\nDESCRIPTION\n\t" .. manpage:Description() .. "\nSYNOPSIS\n\t" .. manpage:Synopsis() .. "\nCOPYRIGHT\n\tThis document is licensed under the " .. manpage:Copyright())
+                    else
+                        print("no manual entry found for '" .. ar[2] .. "'")
+                    end
+
                 end
 
 
 
             else
                 if file_exists("usr/share/man-doc/" .. ar[1] .. ".lua") then
+                    clear_posix()
                     local manpage = require('usr.share.man-doc.' .. ar[1])
                     print(ar[1] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[1] .. "(" .. manpage.Position .. ") ")
                     print("\nNAME\n\t" .. manpage:Name() .. "\nDESCRIPTION\n\t" .. manpage:Description() .. "\nSYNOPSIS\n\t" .. manpage:Synopsis() .. "\nCOPYRIGHT\n\tThis document is licensed under the " .. manpage:Copyright())
@@ -61,7 +68,7 @@ function self:Main(ar)
                 end
 
             end
-
+        end
     else
         print("downloading man-docs...")
         thread_sleep(2)

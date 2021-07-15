@@ -20,3 +20,15 @@ function process.gAddArguments(string)
     end
 end
 
+function OneTimeSplit(string)
+    local tblt = {}
+    local lns = split(string, " ")
+    i = 0
+    -- works!
+
+    for _,V in ipairs(lns) do
+        tblt[i] = V;
+        i = i + 1
+    end
+    return tblt
+end
