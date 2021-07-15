@@ -3,10 +3,11 @@ local self = {}
 
 function self:Main(aa)
     if aa[1] == nil or aa[1] == "-h" then
-        print("KAP: Kux's Advanced Packaging | ")
+        print("KAP: Kux's Advanced Packaging")
         print("Commands:\n\tkap apt-get install <pkg>\n\tkap pull-apt ppa:outdated <pkg>\n\n\tapt-get <action> - Gets a package from the Package repository.\n\tpull-apt <ppa:type> <context> - Pulls a package from the repository depending on the parameters.")
+        print("PPAs:\n\toutdated - An Outdated APT, usually does a reinstall on the command from the server\n\tgit - A git repository.")
     end
-    if aa[1] == "apt-get" then
+    if aa[1] == "get" then
 
     elseif aa[1] == "pull-apt" then
         if aa[2] == nil then
@@ -24,6 +25,10 @@ function self:Main(aa)
                     print("Finished installing " .. aa[3])
                     print("(some packages require restarts to be active!)")
                 end
+                --elseif aa[2] == "ppa:git" then
+                --    os.execute( "git clone " .. aa[3]/ )
+                --
+                --end
             end
         end
     elseif aa[1] == "boop" then
