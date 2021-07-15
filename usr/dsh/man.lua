@@ -20,18 +20,25 @@ end
 
 
 local self = {}
-
+function file_exists(name)
+    local f=io.open(name,"r")
+    if f~=nil then io.close(f) return true else return false end
+end
 function self:Main(ar)
-    if isdir("usr/share") then
+    if isdir("usr/share/man-doc") then
         if ar[1] == nil then
             print("what are you looking for?\ntry `man man`")
         elseif ar[1] ~= nil then
             if ar[1] == "-h" then
                 print("MAN Page Language for Kux\nCommands:\n\tman <doc>\n\tman -k <doc>\n\tman -e <doc>")
             else
-                local manpage = require('usr.share.man-doc.' .. ar[1])
-                print(ar[1] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[1] .. "(" .. manpage.Position .. ") ")
-                print("\nNAME\n\t" .. manpage:Name() .. "\nDESCRIPTION\n\t" .. manpage:Description() .. "\nSYNOPSIS\n\t" .. manpage:Synopsis() .. "\nCOPYRIGHT\n\tThis document is licensed under the " .. manpage:Copyright())
+                if file_exists("usr/share/man-doc/" .. ar[1] .. ".lua") then
+                    local manpage = require('usr.share.man-doc.' .. ar[1])
+                    print(ar[1] .. "(" .. manpage.Position .. ") ".. manpage:Series() .. " " .. ar[1] .. "(" .. manpage.Position .. ") ")
+                    print("\nNAME\n\t" .. manpage:Name() .. "\nDESCRIPTION\n\t" .. manpage:Description() .. "\nSYNOPSIS\n\t" .. manpage:Synopsis() .. "\nCOPYRIGHT\n\tThis document is licensed under the " .. manpage:Copyright())
+                else
+                    print("no manual entry found for '" .. ar[1] .. "'")
+                end
             end
 
         end
