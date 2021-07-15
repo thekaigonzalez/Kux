@@ -31,7 +31,7 @@ function self:Main(ar)
         else
             if ar[1] == "-h" then
                 print("MAN Page Language for Kux\nCommands:\n\tman <doc>\n\tman -k <doc>\n\tman -e <doc>")
-            elseif ar[1] == "-i" then
+            elseif ar[1] == "-i" or #ar < 2  then
                 if ar[2] == nil then
                     print("missing document!")
                 else
