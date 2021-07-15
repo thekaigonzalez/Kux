@@ -7,6 +7,9 @@ local mgr = {}
 --- osdev stuff
 require('lib.osdev.shared')
 
+---https stuff
+require("libhttp")
+
 --- Low level KuxAPI memory functions
 require('libmemio')
 
@@ -65,7 +68,9 @@ G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
             local object = require ('usr.dsh.' .. process.argv[0])
             object:Main(process.argv)
         else
-            mgr:Log("unknown command")
+            if hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. process.argv[0] .. ".lua") ~= "404: Not Found" then
+                print("command not found. But can be installed with")
+            end
         end
 
     end
