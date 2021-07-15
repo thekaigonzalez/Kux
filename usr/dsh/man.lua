@@ -31,8 +31,8 @@ function self:Main(ar)
         else
             if ar[1] == "-h" then
                 print("MAN Page Language for Kux\nCommands:\n\tman <doc>\n\tman -k <doc>\n\tman -e <doc>")
-            elseif ar[1] == "-i" or #ar < 2  then
-                if ar[2] == nil then
+            elseif ar[1] == "-i" then
+                if ar[2] == nil or #ar < 2 then
                     print("missing document!")
                 else
                     if hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/share/man-doc/" .. ar[2] .. ".lua") ~= "404: Not Found" then
