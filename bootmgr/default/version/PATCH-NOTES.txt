@@ -1,7 +1,6 @@
 1.4.8
 
-- Adds a logo to the initscreen
-
+- Fixes installer stuff
 To install, type:
 
 pull +stable

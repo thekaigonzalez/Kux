@@ -17,9 +17,13 @@ function self:Main(args)
         hdofile("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. args[1] .. ".lua", "usr/dsh/" .. args[1] .. ".lua")
         thread_sleep(4)
         print("complete!")
+    elseif args[1] == nil or args[1] == "-h" then
+        print("PKG update make in Lua 5.3")
+        print("Commands:\n\tupdate <command>")
     else
         print("the command you are trying to update is not installed on your system.")
-        print("if using kap, try running `kap pull-apt ppa:outdated " .. args[1] .. "` to install it.")
+        print("if using kap, try running `dpkg install " .. args[1] .. "` to install it.")
+        print("try `dpkg -h` for a list of commands.")
     end
 end
 
