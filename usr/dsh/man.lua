@@ -31,6 +31,18 @@ function self:Main(ar)
         elseif ar[1] ~= nil then
             if ar[1] == "-h" then
                 print("MAN Page Language for Kux\nCommands:\n\tman <doc>\n\tman -k <doc>\n\tman -e <doc>")
+            elseif ar[1] == "-i" then
+                if ar[2] == nil then
+                    print("missing document!")
+                else
+                    if hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/share/man-doc/" .. ar[2] .. ".lua") ~= "404: Not Found" then
+                        hdofile("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/share/man-doc/" .. ar[2] .. ".lua", "usr/share/man-doc/" .. ar[2] .. ".lua")
+                    else
+                        print("manual entry download '" .. ar[2] .. "' not found in server.")
+                    end
+                end
+            end
+
             else
                 if file_exists("usr/share/man-doc/" .. ar[1] .. ".lua") then
                     local manpage = require('usr.share.man-doc.' .. ar[1])
@@ -39,7 +51,7 @@ function self:Main(ar)
                 else
                     print("no manual entry found for '" .. ar[1] .. "'")
                 end
-            end
+
 
         end
 
