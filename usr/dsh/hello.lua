@@ -7,6 +7,7 @@ function self:Main(a)
         -- do nothing
     elseif a[1] == "-h" then
         print("Prints hello world.\nYou could use traditional [Hello World] (-tr)\nOneWord (-ow) [Hello]\nOr, Simply use `hello`.")
+        self.Pm = false
     elseif a[1] == "-tr" then
         self.Message = "Hello World"
     elseif a[1] == "-ow" then
