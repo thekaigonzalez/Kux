@@ -3,13 +3,17 @@
 
 local mgr = {}
 
---- osdev stuff require('lib.osdev.shared')
+--- osdev stuff
+require('lib.osdev.shared')
 
----https stuff require("libhttp")
+---https stuff
+require("libhttp")
 
---- Low level KuxAPI memory functions require('libmemio')
+--- Low level KuxAPI memory functions
+require('libmemio')
 
---- Is required to pull recent versions require('bootmgr.default.kernel.net.pull-version') -- get pull version functions
+--- Is required to pull recent versions
+require('bootmgr.default.kernel.net.pull-version') -- get pull version functions
 
 
 AllowUniversalLua()
@@ -70,11 +74,11 @@ G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
         else
             -- all filesystems should have a check for the /usr/sbin directory
             if file_exists("./usr/sbin/" .. process.argv[0] .. ".lua") then
-                local obj = require("./usr/sbin/" .. process.argv[0] .. ".lua")
+                local obj = require("usr.sbin." .. process.argv[0])
                 obj:Main(process.argv)
                 process.argv = {}
-            elseif file_exists("./" .. process.argv[0] .. ".lua") then
-                local obj = require("./" .. process.argv[0] .. ".lua")
+            elseif file_exists(process.argv[0]) then
+                local obj = require(process.argv[0])
                 obj:Main(process.argv)
                 process.argv = {}
             else
