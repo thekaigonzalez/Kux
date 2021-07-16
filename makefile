@@ -1,5 +1,5 @@
 all:
-	g++ src/initial.cpp -std=c++11 -llua5.3 -o bin/shch
+	g++ src/initial.cpp -std=c++11 -llua5.3 -o gkux
 	g++ lib/http.cpp -std=c++11 -lcpr -shared -fPIC -llua5.3 -o ./libhttp.so
 	g++ lib/posix_thread_sleep.cpp -std=c++11 -lcpr -shared -fPIC -llua5.3 -o ./libposix.so
 	g++ lib/luafs.cpp -std=c++17 -lcpr -shared -fPIC -llua5.3 -o ./libfs.so
