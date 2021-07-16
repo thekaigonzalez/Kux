@@ -16,7 +16,6 @@ function self:Main(a)
         print("Don't you tell me hello, I'm telling you hello!")
         self.Pm = false
     end
-
     if self.Pm == true then
         print(self.Message)
     end
