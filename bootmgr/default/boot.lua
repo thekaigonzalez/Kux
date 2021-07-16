@@ -36,7 +36,6 @@ end
 function mgr:bmain() --- Boot entry point.
     DIRECTORY = "usr/"
     print([[
-    Welcome to ...
         GGGGGGGGGGGGGKKKKKKKKK    KKKKKKK
      GGG::::::::::::GK:::::::K    K:::::K
    GG:::::::::::::::GK:::::::K    K:::::K
