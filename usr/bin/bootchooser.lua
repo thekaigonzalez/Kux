@@ -81,6 +81,12 @@ else
             thread_sleep(1)
             if bootloader == "default" then
                 LOG("copying default bootmgr directories to installer directories...")
+                
+                if (io.open("usr/bootloader") == nil) then
+                    print("Creating /usr/bootloader")
+                    sys_mkdir("usr/bootloader")
+                end
+
                 sysfcpy("./bootmgr/default", "usr/bootloader/bootmanager")
                 thread_sleep(3)
                 LOG("Files copied! adding installs to registry...")
