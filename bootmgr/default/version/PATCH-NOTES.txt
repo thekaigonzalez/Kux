@@ -1,9 +1,3 @@
-1.5.5
+1.5.6 - Bugfix package 1
 
-- Add better math checks
-
-To install, type:
-
-pull +stable
-update hello
-update dpkg
+This update fixes issues with the init installer, and also fixes some syntax errors.
