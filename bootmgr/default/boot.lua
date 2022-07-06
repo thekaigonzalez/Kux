@@ -23,6 +23,7 @@ AllowUniversalLua()
 function mgr:uninstall()
 
 end
+
 function file_exists(name)
     local f = io.open(name, "r")
     if f ~= nil then
@@ -39,24 +40,7 @@ end
 function mgr:bmain()
     --- Boot entry point.
     DIRECTORY = "usr/"
-    print([[
-        GGGGGGGGGGGGGKKKKKKKKK    KKKKKKK
-     GGG::::::::::::GK:::::::K    K:::::K
-   GG:::::::::::::::GK:::::::K    K:::::K
-  G:::::GGGGGGGG::::GK:::::::K   K::::::K
- G:::::G       GGGGGGKK::::::K  K:::::KKKuuuuuu    uuuuuu  xxxxxxx      xxxxxxx
-G:::::G                K:::::K K:::::K   u::::u    u::::u   x:::::x    x:::::x
-G:::::G                K::::::K:::::K    u::::u    u::::u    x:::::x  x:::::x
-G:::::G    GGGGGGGGGG  K:::::::::::K     u::::u    u::::u     x:::::xx:::::x
-G:::::G    G::::::::G  K:::::::::::K     u::::u    u::::u      x::::::::::x
-G:::::G    GGGGG::::G  K::::::K:::::K    u::::u    u::::u       x::::::::x
-G:::::G        G::::G  K:::::K K:::::K   u::::u    u::::u       x::::::::x
- G:::::G       G::::GKK::::::K  K:::::KKKu:::::uuuu:::::u      x::::::::::x
-  G:::::GGGGGGGG::::GK:::::::K   K::::::Ku:::::::::::::::uu   x:::::xx:::::x
-   GG:::::::::::::::GK:::::::K    K:::::K u:::::::::::::::u  x:::::x  x:::::x
-     GGG::::::GGG:::GK:::::::K    K:::::K  uu::::::::uu:::u x:::::x    x:::::x
-        GGGGGG   GGGGKKKKKKKKK    KKKKKKK    uuuuuuuu  uuuuxxxxxxx      xxxxxxx
-    ]])
+    
     isuptodate()
     if DIRECTORY == "usr/" then
         DIRECTORY2 = DIRECTORY
