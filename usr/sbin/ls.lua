@@ -3,7 +3,7 @@ require("libsfs")
 local self = {}
 
 function self:Main(argv)
-    if argv[1] == nil or #argv < 1then
+    if argv[1] == nil or #argv < 1 then
         listdirectory(".")
     else
         if argv[1] == "--h" or argv[1] == "--help" then
