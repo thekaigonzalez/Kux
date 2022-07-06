@@ -5,3 +5,7 @@
 /lua_modules
 /.luarocks
 /usr/bin/libhttp.so/
+*.so
+/usr/bootloader
+gkux
+/usr/dversion
