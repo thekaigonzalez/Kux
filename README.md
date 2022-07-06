@@ -1,4 +1,10 @@
 # Kux
+
+> **NOTE:** since Kux is rolling release, you are always getting new software.
+> Much of the kernel updates are compatible with older versions of Kux,
+> But critical software updates should be installed manually using
+> `kap`.
+
 Kux is a Lua filesystem manager & loader.
 
 Open bin/shch and let it work it's magic.
