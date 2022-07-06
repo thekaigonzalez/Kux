@@ -16,10 +16,10 @@ function self:Main(args)
         print("downloading and installing script...")
         os.remove("usr/dsh/" .. args[1] .. ".lua")
         local url = "https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. args[1] .. ".lua"
-        local f=io.open("usr/dsh/" + args[1] + ".lua", "r")
+        local f=io.open("usr/dsh/" .. args[1] .. ".lua", "r")
         
         if (hgetstring(url) == f:read("a")) then
-            print("command " + args[1] + " up to date. no changes made.")
+            print("command " .. args[1] .. " up to date. no changes made.")
         else
             hdofile(url, "usr/dsh/" .. args[1] .. ".lua")
             thread_sleep(4)
@@ -30,8 +30,10 @@ function self:Main(args)
         print("Commands:\n\tupdate <command>")
     else
         print("the command you are trying to update is not installed on your system.")
-        print("if using kap, try running `dpkg install " .. args[1] .. "` to install it.")
-        print("try `dpkg -h` for a list of commands.")
+        print("Trying to install " .. args[1] .. ".latest ...")
+        local url = "https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. args[1] .. ".lua"
+
+        hdofile(url, "usr/dsh/" .. args[1] .. ".lua")
     end
 end
 
