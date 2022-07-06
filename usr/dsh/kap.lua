@@ -67,7 +67,7 @@ function self:Main(aa)
 
         ]])
     else
-        print(aa[0] .. " is not a kap action.\ntry `kap -h`")
+        print(aa[1] .. " is not a kap action.\ntry `kap -h`")
     end
 
 
