@@ -14,6 +14,9 @@ function self:Main(a)
         hdofile("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/bootmgr/default/version/VERSION.manifest", "usr/dversion/VERSION.manifest")
         dofile("usr/bootloader/bootmanager/boot.lua")
         process.version = hgetstring("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/bootmgr/default/version/VERSION.manifest")
+    elseif a[1] == "--help" or a[1] == "help" or a[1] == "-h" then
+        print("pull [repo | help]")
+        print("the PULL utility downloads latest boot files & versions from the latest repos.")
     end
 end
 
