@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 require('libposix')
 local self = {}
 function file_exists(name)
@@ -14,11 +15,18 @@ function self:Main(args)
         thread_sleep(1)
         print("downloading and installing script...")
         os.remove("usr/dsh/" .. args[1] .. ".lua")
-        hdofile("https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. args[1] .. ".lua", "usr/dsh/" .. args[1] .. ".lua")
-        thread_sleep(4)
-        print("complete!")
+        local url = "https://raw.githubusercontent.com/thekaigonzalez/Kux/master/usr/dsh/" .. args[1] .. ".lua"
+        local f=io.open("usr/dsh/" + args[1] + ".lua", "r")
+        
+        if (hgetstring(url) == f:read("a")) then
+            print("command " + args[1] + " up to date. no changes made.")
+        else
+            hdofile(url, "usr/dsh/" .. args[1] .. ".lua")
+            thread_sleep(4)
+            print("complete!")
+        end
     elseif args[1] == nil or args[1] == "-h" then
-        print("PKG update make in Lua 5.3")
+        print("PKG update make in Lua 5.4")
         print("Commands:\n\tupdate <command>")
     else
         print("the command you are trying to update is not installed on your system.")
